@@ -6,6 +6,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-12
+
+### Fixed
+
+- README webhook samples import `os` and read the signature header with
+  `.get()`, so a request without the header gets a failed check (401 in the
+  Flask sample) instead of a `KeyError`.
+
 ## [1.0.0] - 2026-11-12
 
 First release.

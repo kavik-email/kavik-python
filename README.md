@@ -148,19 +148,21 @@ job = kavik.get_bulk_job("job-id-123")
 Verify incoming webhook signatures without instantiating the client:
 
 ```python
+import os
+
 from kavikemail import verify_webhook_signature, parse_webhook_event
 
 # Option 1: Verify only
 is_valid = verify_webhook_signature(
     payload=raw_body,
-    signature=headers["X-EVA-Signature"],
+    signature=headers.get("X-EVA-Signature"),
     secret=os.environ["KAVIK_WEBHOOK_SECRET"],
 )
 
 # Option 2: Verify + parse in one step
 event = parse_webhook_event(
     payload=raw_body,
-    signature=headers["X-EVA-Signature"],
+    signature=headers.get("X-EVA-Signature"),
     secret=os.environ["KAVIK_WEBHOOK_SECRET"],
 )
 
@@ -171,6 +173,8 @@ print(event["summary"])  # {"safe": 800, "risky": 100, "catchall": 50, "invalid"
 ### Flask Example
 
 ```python
+import os
+
 from flask import Flask, request
 from kavikemail import parse_webhook_event, WebhookSignatureError
 
@@ -181,7 +185,7 @@ def handle_webhook():
     try:
         event = parse_webhook_event(
             payload=request.get_data(as_text=True),
-            signature=request.headers["X-EVA-Signature"],
+            signature=request.headers.get("X-EVA-Signature"),
             secret=os.environ["KAVIK_WEBHOOK_SECRET"],
         )
         print(f"Job {event['job_id']} completed:", event["summary"])
