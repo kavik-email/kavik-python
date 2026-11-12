@@ -1,6 +1,6 @@
 """Standalone webhook signature verification for Kavik.email webhooks.
 
-Uses only Python stdlib — no external dependencies required.
+Uses only the Python standard library, with no external dependencies.
 
 Example::
 

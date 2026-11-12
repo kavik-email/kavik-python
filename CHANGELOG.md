@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-11-12
+
+### Changed
+
+- The webhook module's docstring uses plain punctuation. The code is the
+  same as 1.0.1.
+
 ## [1.0.1] - 2026-11-12
 
 ### Fixed
