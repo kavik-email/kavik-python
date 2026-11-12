@@ -4,7 +4,7 @@ Uses only Python stdlib — no external dependencies required.
 
 Example::
 
-    from kavik import verify_webhook_signature
+    from kavikemail import verify_webhook_signature
 
     is_valid = verify_webhook_signature(
         payload=request.body,

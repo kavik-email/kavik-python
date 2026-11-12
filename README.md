@@ -1,4 +1,4 @@
-# kavik
+# kavikemail
 
 Official Python SDK for the **Kavik.email** email verification API.
 
@@ -7,13 +7,13 @@ Single dependency (`httpx`). Works with Python 3.9+. Fully typed (`py.typed`).
 ## Installation
 
 ```bash
-pip install kavik
+pip install kavikemail
 ```
 
 ## Quick Start
 
 ```python
-from kavik import Kavik
+from kavikemail import Kavik
 
 kavik = Kavik("eva_...")
 
@@ -148,7 +148,7 @@ job = kavik.get_bulk_job("job-id-123")
 Verify incoming webhook signatures without instantiating the client:
 
 ```python
-from kavik import verify_webhook_signature, parse_webhook_event
+from kavikemail import verify_webhook_signature, parse_webhook_event
 
 # Option 1: Verify only
 is_valid = verify_webhook_signature(
@@ -172,7 +172,7 @@ print(event["summary"])  # {"safe": 800, "risky": 100, "catchall": 50, "invalid"
 
 ```python
 from flask import Flask, request
-from kavik import parse_webhook_event, WebhookSignatureError
+from kavikemail import parse_webhook_event, WebhookSignatureError
 
 app = Flask(__name__)
 
@@ -195,7 +195,7 @@ def handle_webhook():
 All API errors are raised as typed exceptions:
 
 ```python
-from kavik import (
+from kavikemail import (
     Kavik,
     KavikError,
     RateLimitError,

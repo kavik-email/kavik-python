@@ -1,4 +1,4 @@
-"""Unit tests for the retry rules in kavik._http. No network: requests
+"""Unit tests for the retry rules in kavikemail._http. No network: requests
 go to an httpx.MockTransport. Run from sdk/python with
 ``py -3 -m pytest tests/test_http.py``."""
 
@@ -7,8 +7,8 @@ import time
 import httpx
 import pytest
 
-from kavik import DailyLimitError, QuotaExceededError, RateLimitError
-from kavik._http import request
+from kavikemail import DailyLimitError, QuotaExceededError, RateLimitError
+from kavikemail._http import request
 
 BASE_URL = "https://example.test"
 

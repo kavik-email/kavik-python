@@ -4,7 +4,7 @@
 import hashlib
 import hmac
 
-from kavik import verify_webhook_signature
+from kavikemail import verify_webhook_signature
 
 SECRET = "whsec_test"
 BODY = b'{"event":"job.completed","job_id":"j1"}'

@@ -32,7 +32,7 @@ class Kavik:
 
     Example::
 
-        from kavik import Kavik
+        from kavikemail import Kavik
 
         kavik = Kavik("eva_...")
         result = kavik.verify("user@example.com")

@@ -1,4 +1,4 @@
-"""Live integration tests for the kavik Python SDK.
+"""Live integration tests for the kavikemail Python SDK.
 
 Mirrors the JS/TS test-live.mjs: tests against a running API instance.
 
@@ -15,7 +15,7 @@ import uuid
 # Allow running from sdk/python/ directory
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from kavik import Kavik, KavikError, AuthenticationError, NotFoundError
+from kavikemail import Kavik, KavikError, AuthenticationError, NotFoundError
 
 API_KEY = os.environ.get("KAVIK_API_KEY") or sys.exit("Set KAVIK_API_KEY to run live tests.")
 BASE_URL = os.environ.get("KAVIK_BASE_URL", "https://api.kavik.email")

@@ -5,8 +5,8 @@ requests go to an httpx.MockTransport. Run from sdk/python with
 import httpx
 import pytest
 
-import kavik
-from kavik import Kavik, KavikError, NotFoundError
+import kavikemail
+from kavikemail import Kavik, KavikError, NotFoundError
 
 
 def _recording(kv, status=200, body=None):
@@ -50,6 +50,6 @@ def test_api_errors_are_kavik_errors():
 
 
 def test_public_names_carry_no_old_brand():
-    assert {"Kavik", "KavikError", "KavikResponse"} <= set(kavik.__all__)
+    assert {"Kavik", "KavikError", "KavikResponse"} <= set(kavikemail.__all__)
     # No export keeps the old client prefix (the old names all began "Ev").
-    assert not [n for n in kavik.__all__ if n.lower().startswith("ev")]
+    assert not [n for n in kavikemail.__all__ if n.lower().startswith("ev")]

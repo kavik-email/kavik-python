@@ -2,7 +2,7 @@
 ``py -3 -m pytest tests/test_models.py`` (tests/test_live.py needs a live API
 and exits at import without KAVIK_API_KEY, so name this file explicitly)."""
 
-from kavik.models import parse_bulk_job_result, parse_verification_result
+from kavikemail.models import parse_bulk_job_result, parse_verification_result
 
 BASE = {
     "email": "karl@t-online.de",

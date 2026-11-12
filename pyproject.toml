@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "kavik"
+name = "kavikemail"
 version = "1.0.0"
 description = "Official Python SDK for the Kavik.email email verification API"
 readme = "README.md"
@@ -17,6 +17,7 @@ keywords = [
     "api",
     "sdk",
     "kavik",
+    "kavikemail",
     "email-validation",
     "email-verification",
     "disposable-email",
@@ -42,7 +43,7 @@ Documentation = "https://kavik.email/docs/sdks/"
 Issues = "https://github.com/kavik-email/kavik-python/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["kavik"]
+packages = ["kavikemail"]
 
 [tool.hatch.build.targets.sdist]
-include = ["/kavik", "/tests", "/README.md", "/LICENSE", "/CHANGELOG.md", "/pyproject.toml"]
+include = ["/kavikemail", "/tests", "/README.md", "/LICENSE", "/CHANGELOG.md", "/pyproject.toml"]
