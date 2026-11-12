@@ -7,7 +7,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # Python 3.9 has no build for Ubuntu 26.04, so the test job stays on 24.04.
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         python-version: ["3.9", "3.13"]
@@ -18,7 +19,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e . pytest
       # tests/test_live.py needs a real key, so CI runs the unit tests only.
-      - run: python -m pytest tests/test_client.py tests/test_http.py tests/test_models.py -q
+      - run: python -m pytest tests/test_client.py tests/test_http.py tests/test_models.py tests/test_webhook.py -q
 
   package:
     runs-on: ubuntu-latest
